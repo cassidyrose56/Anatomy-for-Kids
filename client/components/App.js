@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Users from './Users.js'
+import Body from './Body.js'
 
 class App extends Component {
 	render() {
 		return (
 			<div> 
-				<Users />
+				<Body />
 			</div>
 		)
 	}
 }
+
+
 export default App;

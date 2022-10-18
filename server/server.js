@@ -4,11 +4,11 @@ const controller = require('./routes/controller');
 const port = 3000;
 
 
-// app.use(cors({
-//     origin: 'http://localhost:3000'
-// }));
 
 app.use(express.json());
+// app.use(cors({
+//     origin: 'http://localhost:8080'
+// }));
 
 app.use('/api/controller', controller.getUsers, (req, res) => {
     return res.json(res.locals.users).status(200);
@@ -37,4 +37,4 @@ app.listen(port, () => {
     console.log(`App listening on port ${port}`)
   })
 
-  module.exports = app;
+module.exports = app;

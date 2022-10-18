@@ -1,14 +1,14 @@
-const express = require('express');
+const models = require('../models/data-models.js')
 
 const controller = {};
 
 controller.getUsers = async(req, res, next) => {
     try {
         res.locals.users = [
-        {username: 'Cassidy', age: 22,},
-        {username: 'Brian', age: 24,}
-    ];
-    return next();
+        {name: 'Eye', purpose: 'Seeing', parts: 'Cornea, Pupil, Iris'},
+        {name: 'Ear', purpose: 'Hearing', parts: 'Malleus, Incus, Stapes'},
+        ];
+        return next();
     }
     catch(err) {
         return next({

@@ -1,9 +1,13 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+// const fs = require('fs');
+// const appDirectory = fs.realpathSync(process.cwd());
+const host = process.env.HOST || 'localhost';
+// const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
 
 module.exports = {
-	entry: './client/main.js',
+	entry: './main.js',
     output: {
 		path: path.join(__dirname, 'build'),
 		filename: 'bundle.js'
@@ -11,13 +15,20 @@ module.exports = {
 	mode: 'development',
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './client/index.html'
+			template: './index.html'
 		})
 	],
     devServer: {
+        // static: resolveAppPath('src'),
+        compress: true,
         hot: true,
-        proxy: {
-            '/api': 'http://localhost:3000',
+        host,
+        port: 8080,
+        proxy: { 
+            "/api/**": { 
+                target: 'http://localhost:3000', 
+                secure: false 
+            }  
         }
     },
     module: {
@@ -37,3 +48,5 @@ module.exports = {
 		]
 	}
 }
+
+// export default Config;
