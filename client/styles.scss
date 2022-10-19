@@ -1,0 +1,18 @@
+$font-stack: 'Varela Round', sans-serif;
+$blue: #01BEFE;
+$yellow: #FFDD00;
+$orange: #FF7D00;
+$pink: #FF006D;
+$green: #ADFF02;
+$violet: #8F00FF;
+
+#partBoxes {
+    background-color: $pink;
+    border-radius: 8px;
+    padding: 20px;
+    width: 244px;
+    color: white;
+    font-family: $font-stack;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

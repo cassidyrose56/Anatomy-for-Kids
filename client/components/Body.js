@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import style from '../styles.js';
 
-class Users extends Component {
+class Body extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            parts: []
+            fetchedData: false,
+            parts: {}
         }
     }
 
@@ -14,10 +14,11 @@ class Users extends Component {
         fetch('/api/controller')
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             this.setState({ 
+                fetchedData: true,
                 parts: data 
             })
+            console.log(this.state)
         })
         .catch((err) => console.log(err)
         );
@@ -28,13 +29,11 @@ class Users extends Component {
 		return (
             <div >
 				{
-				this.state.parts.map(part => {
-					return <p style={style.partBoxes} key={part.name}>Name: {part.name}<br /> Purpose: {part.purpose}<br /> Parts: {part.parts} </p>
-				  })
-	            }
+				<p id='partBoxes' key={this.state.parts.name}>Name: {this.state.parts.name}<br /> Purpose: {this.state.parts.purpose}<br /> Parts: {this.state.parts.parts} </p>
+				}
             </div>
         )
     }
 }
 
-export default Users;
+export default Body;

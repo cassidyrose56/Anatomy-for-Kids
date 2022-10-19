@@ -2,12 +2,15 @@ const models = require('../models/data-models.js')
 
 const controller = {};
 
-controller.getUsers = async(req, res, next) => {
+controller.createParts = async(req, res, next) => {
     try {
-        res.locals.users = [
-        {name: 'Eye', purpose: 'Seeing', parts: 'Cornea, Pupil, Iris'},
-        {name: 'Ear', purpose: 'Hearing', parts: 'Malleus, Incus, Stapes'},
-        ];
+        const partsData = new models.Body({name: 'Eyes', classification: 'Organs', purpose: 'Seeing',
+        parts: ['Cornea', 'Pupil', 'Iris']});
+        partsData.save((err) => {
+            if (err) return handleError(err);
+        });
+        res.locals.partsData = partsData;
+        console.log('controller.js', res.locals.partsData)
         return next();
     }
     catch(err) {
