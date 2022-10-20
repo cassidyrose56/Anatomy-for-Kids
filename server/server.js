@@ -7,8 +7,12 @@ const port = 3000;
 
 app.use(express.json());
 
-app.get('/api/controller', controller.createParts, (req, res) => {
+app.get('/api/controller', controller.printParts, (req, res) => {
      return res.status(200).json(res.locals.partsData)}
+);
+
+app.post('/api/controller', controller.createParts, (req, res) => {
+  return res.status(200).json(res.locals.partsData)}
 );
 
 app.get('/api', (req, res) => {

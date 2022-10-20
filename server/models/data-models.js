@@ -18,7 +18,7 @@ const bodySchema = new Schema({
     name: String,
     classification: String,
     purpose: String,
-    parts: []
+    parts: String
 })
 
 const Body = mongoose.model('Body', bodySchema);
