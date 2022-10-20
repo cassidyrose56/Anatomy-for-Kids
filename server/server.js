@@ -15,6 +15,10 @@ app.post('/api/controller', controller.createParts, (req, res) => {
   return res.status(200).json(res.locals.partsData)}
 );
 
+app.post('/api/delete', controller.deleteParts, (req, res) => {
+  return res.status(200).json(res.locals.deleted)
+})
+
 app.get('/api', (req, res) => {
 	return res.send('hello world from express!')
 });

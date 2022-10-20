@@ -5,6 +5,7 @@ $orange: #FF7D00;
 $pink: #FF006D;
 $green: #ADFF02;
 $violet: #8F00FF;
+$midpoint: #485FFF;
 $black: rgb(30, 30, 30);
 
 body {
@@ -14,12 +15,7 @@ body {
 #body {
     display: grid;
     grid-template-columns: 50% 50%;
-    place-items: center;
-    grid-gap: 5px;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: 0px;
+    justify-items: center;
 
 }
 
@@ -37,17 +33,44 @@ body {
     justify-self: stretch;
     font-size: 40px;
     padding: 15px;
+    position: sticky;
+}
+
+.miniBar {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    justify-self: stretch;
+    color: white;
+}
+
+#leftMiniBar {
+    background-image: linear-gradient(to right, $violet, 85%, $midpoint);
+}
+
+#rightMiniBar {
+    background-image: linear-gradient(to right, $midpoint, 15%, $blue)
 }
 
 #partBoxes {
     background-color: $pink;
-    border-radius: 8px;
+    border-radius: 14px;
+    margin-top: 10px;
     padding: 20px;
-    width: 244px;
+    width: 70%;
     color: white;
     font-family: $font-stack;
-    font-weight: 600;
     letter-spacing: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#premadeDb {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
 }
 
 .centered {
@@ -56,13 +79,22 @@ body {
     align-items: center;
 }
 
+#creatorDb {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
 #creatorBox {
-    place-self: center;
-    grid-column: 2;
+    align-self: center;
+    width: 70%;
     background-color: $green;
-    width: 244px;
     border-radius: 20px;
-    padding: 1px 20px 20px 20px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px 20px 20px;
 }
 
 #creatorBoxTitle {
@@ -72,8 +104,15 @@ body {
 
 }
 
+.inputBoxes {
+    width: 50%;
+    height: 25px;
+    border-radius: 14px;
+    border: solid 1px $black;
+}
+
 #submitButton {
-    border: solid 2px $violet;
+    border: solid 1px $black;
     font-family: $font-stack;
     border-radius: 20px;
     width: 40%;
@@ -82,11 +121,12 @@ body {
 }
 
 #createdBoxes {
-    display: inline-block;
     background-color: $blue;
-    border-radius: 8px;
+    border-radius: 14px;
     padding: 20px;
-    width: 244px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
     font-family: $font-stack;
     font-weight: 600;

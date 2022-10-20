@@ -5,15 +5,15 @@ import DbBody from './DbBody.js';
 class App extends Component {
 	render() {
 		return (
-			<div id='body'> 
-				<div id='navbar' className='text'>
-					Learn about your body!
+			<div id='body' className='text' > 
+				<div id='navbar'>
+					Learn about the body!
 				</div>
-				<div>
-
+				<div id='leftMiniBar' className='miniBar'>
+					Check out these 
 				</div>
-				<div>
-					
+				<div id='rightMiniBar' className='miniBar'>
+					hello
 				</div>
 				<DbBody />
 				<CreatorBox />

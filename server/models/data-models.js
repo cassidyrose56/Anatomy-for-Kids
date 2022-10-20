@@ -21,7 +21,7 @@ const bodySchema = new Schema({
     parts: String
 })
 
-const Body = mongoose.model('Body', bodySchema);
+const Body = mongoose.model('bodies', bodySchema);
 // console.log(Body.find({}))
 
 module.exports = {

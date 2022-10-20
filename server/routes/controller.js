@@ -38,7 +38,27 @@ controller.createParts = async(req, res, next) => {
         return next();
     }
     catch(err) {
-        console.log('error in createParts')
+        return next({
+            log: `Error occurred in controller.createParts - ERROR: ${err}`,
+            status: 400,
+            message: 'Sorry, cannot create parts right now!'
+        })
+    }
+}
+
+controller.deleteParts = async(req, res, next) => {
+    try {
+        console.log(req.body)
+        await models.Body.findOneAndDelete({name: req.body})
+        res.locals.deleted = 'deleted!'
+        return next();
+    }
+    catch(err) {
+        return next({
+            log: `Error occurred in controller.deleteParts - ERROR: ${err}`,
+            status: 400,
+            message: 'Sorry, cannot delete parts right now!'
+        })
     }
 }
 
