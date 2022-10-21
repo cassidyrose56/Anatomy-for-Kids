@@ -27,6 +27,7 @@ controller.createParts = async(req, res, next) => {
             classification: req.body.classification,
             purpose: req.body.purpose,
             parts:  req.body.parts,
+            funFact: req.body.funFact
             });
         // console.log(partsData)
         // partsData.save((err) => {

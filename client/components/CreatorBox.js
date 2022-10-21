@@ -12,7 +12,7 @@ const CreatorBox = () => {
   const [funFact, setFunFact] = useState('');
   const [numOfCreatedItems, setNumOfCreatedItems] = useState(0);
 
-  let part = { name, classification, purpose, parts };
+  let part = { name, classification, purpose, parts, funFact };
 
     const handleSubmit = (e) => {
       e.preventDefault();

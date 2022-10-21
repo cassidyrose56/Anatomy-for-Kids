@@ -1,6 +1,6 @@
 $font-stack: 'Varela Round', sans-serif;
 $blue: #01BEFE;
-$yellow: #FFDD00;
+$yellow: #ffe229;
 $orange: #FF7D00;
 $pink: #FF006D;
 $green: #ADFF02;
@@ -24,16 +24,31 @@ body {
     color: $black;
 }
 
+@keyframes change-color {
+    0% {
+      color: $blue;
+    }
+    50% {
+      color: $violet;
+    }
+    100% {
+      color: $blue;
+    }
+  }
+
 #navbar {
     grid-column: 1 / 3;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $yellow;
+    color: $black;
     justify-self: stretch;
     font-size: 40px;
     padding: 15px;
-    position: sticky;
+    animation-name: change-color;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
 }
 
 .miniBar {
@@ -57,9 +72,9 @@ body {
 #partBoxes {
     background-color: $pink;
     border-radius: 14px;
-    margin-top: 10px;
+    margin-top: 30px;
     padding: 20px;
-    width: 70%;
+    width: 80%;
     color: white;
     font-family: $font-stack;
     letter-spacing: 1px;
@@ -70,7 +85,9 @@ body {
 #premadeDb {
     grid-column: 1 / 2;
     display: flex;
+    height: 100%;
     flex-direction: column;
+    border-right: solid 1px $midpoint;
 }
 
 .centered {
@@ -88,7 +105,7 @@ body {
 
 #creatorBox {
     align-self: center;
-    width: 70%;
+    width: 80%;
     background-color: $green;
     border-radius: 20px;
     margin-top: 10px;

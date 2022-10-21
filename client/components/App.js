@@ -7,13 +7,13 @@ class App extends Component {
 		return (
 			<div id='body' className='text' > 
 				<div id='navbar'>
-					Learn about the body!
+					Fun Health Facts!
 				</div>
 				<div id='leftMiniBar' className='miniBar'>
-					Check out these 
+					Check these out!
 				</div>
 				<div id='rightMiniBar' className='miniBar'>
-					hello
+					Add your own!
 				</div>
 				<DbBody />
 				<CreatorBox />
